@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+:root {
+    --dark: #241d18;
+    --gold: #b27a3a;
+    --cream: #f8f3ec;
+    --white: #ffffff;
+    --text: #403832;
+    --muted: #756c65;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.7;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1120px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(226, 208, 208, 0.94);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #eee;
+}
+
+.nav {
+    width: 100%;
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.logo {
+    color: var(--dark);
+    text-decoration: none;
+
+    font-weight: 700;
+    letter-spacing: 0.08em;
+
+    margin-right: auto;
+
+    white-space: nowrap;
+}
+
+.nav nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.call-btn,
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    padding: 11px 20px;
+
+    font-weight: 700;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.call-btn {
+    background: var(--dark);
+    color: #fff;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 92vh;
+
+    display: flex;
+    align-items: center;
+
+    background-image: url("images/mon-an.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: #fff;
+
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 14, 10, 0.82),
+            rgba(20, 14, 10, 0.25)
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+
+    padding-top: 76px;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+
+    font-size: 12px;
+    letter-spacing: 0.18em;
+
+    font-weight: 700;
+
+    color: var(--gold);
+}
+
+.hero .eyebrow {
+    color: #f1c48d;
+}
+
+
+/* =========================
+   TÊN THƯƠNG HIỆU
+========================= */
+
+.hero .brand-name {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 25px;
+
+    color: #d2954b;
+
+    font-family: "Times New Roman", Georgia, serif;
+
+    /*
+       Không dùng 80px cố định trên điện thoại
+    */
+    font-size: clamp(38px, 7vw, 80px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    letter-spacing: 0;
+
+    /*
+       QUAN TRỌNG:
+       Cho phép chữ xuống dòng trên điện thoại
+    */
+    white-space: normal;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+.hero .brand-name div {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================
+   HERO TITLE
+========================= */
+
+.hero h1 {
+    margin: 0 0 22px;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(38px, 6vw, 60px);
+
+    line-height: 1.05;
+
+    color: #fff;
+}
+
+.hero p {
+    max-width: 600px;
+
+    margin: 0;
+
+    font-size: 18px;
+
+    color: #fff;
+}
+
+.hero-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.btn.primary {
+    background: var(--gold);
+    color: #fff;
+}
+
+.btn.secondary {
+    background: #fff;
+    color: var(--dark);
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    width: 100%;
+
+    padding: 100px 0;
+}
+
+.light {
+    background: var(--cream);
+}
+
+.two-col {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+.section h2 {
+    margin: 0 0 15px;
+
+    color: var(--dark);
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(36px, 5vw, 54px);
+
+    line-height: 1.15;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    width: 100%;
+}
+
+.food-card {
+    min-width: 0;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(40, 25, 15, 0.07);
+}
+
+.food-card img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+}
+
+.food-card div {
+    padding: 20px;
+}
+
+.food-card span {
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.14em;
+
+    color: var(--gold);
+
+    font-weight: 700;
+}
+
+.food-card h3 {
+    margin: 5px 0;
+
+    color: var(--dark);
+
+    font-size: 20px;
+}
+
+.food-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    width: 100%;
+}
+
+.service-grid article {
+    min-width: 0;
+
+    padding: 32px;
+
+    border: 1px solid #eadfd3;
+
+    border-radius: 18px;
+}
+
+.service-icon {
+    color: var(--gold);
+
+    font-size: 13px;
+
+    letter-spacing: 0.12em;
+
+    font-weight: 700;
+}
+
+.service-grid h3 {
+    color: var(--dark);
+
+    font-size: 22px;
+}
+
+
+/*
+   Hàng thứ 2:
+   Không dùng translateX(50%)
+   vì nó gây tràn màn hình trên mobile.
+*/
+
+.service-grid article:nth-child(4),
+.service-grid article:nth-child(5) {
+    transform: none;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 6px;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+.gallery img,
+.gallery video {
+    width: 100%;
+    height: 220px;
+
+    display: block;
+
+    object-fit: cover;
+
+    margin: 0;
+    padding: 0;
+
+    border-radius: 4px;
+}
+
+.gallery video {
+    background: #000;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background: var(--dark);
+
+    color: #fff;
+}
+
+.cta h2 {
+    margin: 0 0 12px;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1.15;
+}
+
+.cta p {
+    color: #ddd;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-card {
+    background: var(--cream);
+
+    padding: 32px;
+
+    border-radius: 18px;
+}
+
+.full {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #17120f;
+
+    color: #cfc7c0;
+
+    padding: 24px 0;
+}
+
+.footer-inner {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .container {
+        width: calc(100% - 32px);
+        max-width: 100%;
+    }
+
+    .nav {
+        min-height: 66px;
+
+        gap: 10px;
+    }
+
+    .nav nav {
+        display: none;
+    }
+
+    .call-btn {
+        padding: 9px 14px;
+    }
+
+    .hero {
+        width: 100%;
+        min-height: 82vh;
+
+        align-items: flex-end;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding-top: 110px;
+        padding-bottom: 50px;
+    }
+
+    .hero .brand-name {
+        /*
+           Kích thước nhỏ hơn trên điện thoại
+        */
+        font-size: clamp(36px, 11vw, 58px);
+
+        line-height: 1.05;
+
+        white-space: normal;
+
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 10vw, 52px);
+    }
+
+    .hero p {
+        max-width: 100%;
+
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 72px 0;
+    }
+
+    .two-col {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid article:nth-child(4),
+    .service-grid article:nth-child(5) {
+        grid-column: auto;
+
+        transform: none;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+
+        width: 100%;
+    }
+
+    .gallery img,
+    .gallery video {
+        height: 180px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
+
+/* =====================================================
+   ĐIỆN THOẠI NHỎ
+===================================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .nav {
+        padding: 0;
+    }
+
+    .logo {
+        font-size: 13px;
+        letter-spacing: 0.04em;
+    }
+
+    .call-btn {
+        font-size: 12px;
+
+        padding: 8px 12px;
+    }
+
+    .hero {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 78vh;
+
+        background-position: center center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding-top: 100px;
+        padding-bottom: 35px;
+    }
+
+    /*
+       FIX QUAN TRỌNG NHẤT
+       Không cho tên thương hiệu làm rộng trang.
+    */
+
+    .hero .brand-name {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(32px, 10vw, 46px);
+
+        line-height: 1.08;
+
+        white-space: normal;
+
+        overflow-wrap: anywhere;
+
+        word-break: normal;
+    }
+
+    .hero .brand-name div {
+        width: 100%;
+        max-width: 100%;
+
+        white-space: normal;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+
+        line-height: 1.08;
+    }
+
+    .hero p {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .hero-actions {
+        width: 100%;
+
+        gap: 8px;
+    }
+
+    .hero-actions .btn {
+        flex: 0 0 auto;
+
+        padding: 10px 16px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section h2 {
+        font-size: 38px;
+    }
+
+    .food-card img {
+        height: 220px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .gallery img,
+    .gallery video {
+        width: 100%;
+        height: 220px;
+    }
+
+    .cta {
+        padding: 70px 16px;
+    }
+
+    .cta h2 {
+        font-size: 40px;
+    }
+}
+
+
+/* =====================================================
+   SIÊU NHỎ
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .hero .brand-name {
+        font-size: 30px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+}
